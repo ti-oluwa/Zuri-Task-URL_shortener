@@ -13,5 +13,3 @@ class Link(models.Model):
     def __str__(self):
         return self.description
 
-    class Meta:
-        ordering = ['-posted_on']
