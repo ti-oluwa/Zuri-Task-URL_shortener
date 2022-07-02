@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django import utils
+from . import utils
 
 
 class Link(models.Model):
@@ -15,7 +15,7 @@ class Link(models.Model):
         return f"{self.identifier}"
 
     def save(self, *args, **kwargs):
-        if not self.identifier:
+        if not self.identifier:  
             # Generate a random ID
             random_id = utils.generate_random_id()
             
